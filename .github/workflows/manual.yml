@@ -5,8 +5,10 @@ on:
     branches: [main]
       
 jobs:
-  build:
+  build-push-images:
+    name: Build and publish
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout 
         uses: actions/checkout@v2
@@ -18,12 +20,15 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           
       - name: Set up Docker Buildx
+        id: buildx
         uses: docker/setup-buildx-action@v1
         
       - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:latest
