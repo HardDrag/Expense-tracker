@@ -40,6 +40,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-                latest
+                harddrag/zadanie2:v1
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:buildcache,mode=max
