@@ -38,6 +38,6 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:latest
+          tags: harddrag/zadanie2:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/zadanie2:buildcache,mode=max
