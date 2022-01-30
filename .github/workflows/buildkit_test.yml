@@ -25,6 +25,13 @@ jobs:
             | jq -r 'map(select(.name|startswith("v")))|sort_by(.name)[-1].assets[]|select(.name|endswith(".linux-amd64.tar.gz")).browser_download_url')"
           curl -L "${BUILDKIT_URL}" | sudo tar -xz -C /usr/local
           
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+          
       - name: Start buildkit daemon
         run: |
           sudo --non-interactive --shell <<END_SUDO
