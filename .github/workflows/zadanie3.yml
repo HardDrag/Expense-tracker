@@ -39,5 +39,5 @@ jobs:
           buildctl build \
             --frontend=dockerfile.v0 --local dockerfile=. --local context=. \
             --output type=image,name=harddrag/projekt:v3,push=true \
-            --export-cache type=registry,ref=harddrag/projekt:v3cache, mode=max \
+            --export-cache type=registry,ref=harddrag/projekt:v3cache \
             --import-cache type=registry,ref=harddrag/projekt:v3cache
