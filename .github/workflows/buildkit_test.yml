@@ -54,7 +54,7 @@ jobs:
             --opt platform=linux/amd64,linux/arm64,linux/arm/v7 \
             --export-cache type=local,dest=${BUILD_CACHE},mode=max \
             --import-cache type=local,src=${BUILD_CACHE} \
-            --output type=docker,name=harddrag/projekt:v1 | docker load
+            --output type=docker,name=harddrag/projekt:v1 | docker push
           echo "Cache size: $(du -sh ${BUILD_CACHE})"  
       
       - name: Push to Docker hub
