@@ -46,4 +46,4 @@ jobs:
           buildctl build \
             --frontend=dockerfile.v0 --local dockerfile=. --local context=. \
             --opt platform=linux/amd64,linux/arm64,linux/arm/v7 \
-            --output type=docker,name=harddrag/projekt:v2,push=true
+            --output type=image,name=harddrag/projekt:v2,push=true
