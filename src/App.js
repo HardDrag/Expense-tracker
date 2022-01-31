@@ -1,28 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Nos
+          Expense tracker
+          <FontAwesomeIcon icon={faCoffee} />
         </p>
-        <table>
-          <tbody>
-            <tr>
-              <td>aaa</td>
-              <td>bbb</td>
-              <td>ccc</td>
-            </tr>
-            <tr>
-              <td>ddd</td>
-              <td>eee</td>
-              <td>fff</td>
-            </tr>
-          </tbody>
-        </table>
       </header>
     </div>
   );
