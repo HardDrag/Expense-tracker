@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
+          <FontAwesomeIcon icon={faCoffee} />
           Expense tracker
           <FontAwesomeIcon icon={faCoffee} />
         </p>
